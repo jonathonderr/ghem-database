@@ -7,15 +7,16 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   Alert.find({}, (err, alerts) => {
-    const alertMap = {};
+    const alertMap = [];
 
     alerts.forEach((alert) => {
-      alertMap[alert._id] = {
+      alertMap.push({
+        id: alert._id,
         title: alert.title,
         message: alert.message,
         status: alert.status,
         date: alert.date.toLocaleDateString('en-US'),
-      };
+      });
     });
 
     res.send(alertMap);
