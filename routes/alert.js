@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     const alertMap = [];
 
     alerts.forEach((alert) => {
-      alertMap.push({
+      alertMap.unshift({
         id: alert._id,
         title: alert.title,
         message: alert.message,
