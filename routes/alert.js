@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
       });
     });
 
-    res.send(alertMap);
+    res.json(alertMap);
   });
 });
 
