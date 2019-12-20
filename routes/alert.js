@@ -10,10 +10,11 @@ router.get('/', (req, res) => {
     const alertMap = {};
 
     alerts.forEach((alert) => {
-      alertMap[alert.date.toLocaleDateString('en-US')] = {
+      alertMap[alert._id] = {
         title: alert.title,
         message: alert.message,
         status: alert.status,
+        date: alert.date.toLocaleDateString('en-US'),
       };
     });
 
